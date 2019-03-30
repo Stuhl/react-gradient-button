@@ -33692,7 +33692,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(["\n /* Remove standard style */\n  padding: 0;\n  border: none;\n  background: none;\n  // margin: 20px;\n\n  /* fixed properties */\n  text-transform: uppercase;\n  cursor: pointer;\n  border-radius: 50px;\n  color: white;\n  font-weight: 600;\n\n  font-size: ", "\n  padding: ", ";\n  font-family: ", "\n\n  background: ", ";\n  background-size: 200% 100%;\n\n  transition: all 0.4s ease 0s, box-shadow 0.1s ease 0s;\n\n  box-shadow: ", ";\n\n\n  &:hover {\n    background-position: 100% 0%;\n    box-shadow: ", ";\n  }\n  //\n  // &:active {\n  //   box-shadow: ", ";\n  // }\n\n  &:focus {\n    outline: none;\n  }\n"], ["\n /* Remove standard style */\n  padding: 0;\n  border: none;\n  background: none;\n  // margin: 20px;\n\n  /* fixed properties */\n  text-transform: uppercase;\n  cursor: pointer;\n  border-radius: 50px;\n  color: white;\n  font-weight: 600;\n\n  font-size: ", "\n  padding: ", ";\n  font-family: ", "\n\n  background: ", ";\n  background-size: 200% 100%;\n\n  transition: all 0.4s ease 0s, box-shadow 0.1s ease 0s;\n\n  box-shadow: ", ";\n\n\n  &:hover {\n    background-position: 100% 0%;\n    box-shadow: ", ";\n  }\n  //\n  // &:active {\n  //   box-shadow: ", ";\n  // }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+var _templateObject = _taggedTemplateLiteral(["\n /* Remove standard style */\n  padding: 0;\n  border: none;\n  background: none;\n  // margin: 20px;\n\n  /* fixed properties */\n  text-transform: uppercase;\n  cursor: pointer;\n  border-radius: ", ";\n  color: white;\n  font-weight: 600;\n\n  font-size: ", "\n  padding: ", ";\n  font-family: ", "\n\n  background: ", ";\n  background-size: 200% 100%;\n\n  transition: all 0.4s ease 0s, box-shadow 0.1s ease 0s;\n\n  box-shadow: ", ";\n\n\n  &:hover {\n    background-position: 100% 0%;\n    box-shadow: ", ";\n  }\n  //\n  // &:active {\n  //   box-shadow: ", ";\n  // }\n\n  &:focus {\n    outline: none;\n  }\n"], ["\n /* Remove standard style */\n  padding: 0;\n  border: none;\n  background: none;\n  // margin: 20px;\n\n  /* fixed properties */\n  text-transform: uppercase;\n  cursor: pointer;\n  border-radius: ", ";\n  color: white;\n  font-weight: 600;\n\n  font-size: ", "\n  padding: ", ";\n  font-family: ", "\n\n  background: ", ";\n  background-size: 200% 100%;\n\n  transition: all 0.4s ease 0s, box-shadow 0.1s ease 0s;\n\n  box-shadow: ", ";\n\n\n  &:hover {\n    background-position: 100% 0%;\n    box-shadow: ", ";\n  }\n  //\n  // &:active {\n  //   box-shadow: ", ";\n  // }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
 var _react = require("react");
 
@@ -33707,6 +33707,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Wrapper = _styledComponents2.default.button(_templateObject, function (props) {
+  return props.borderRadius ? props.borderRadius + "px" : "50px";
+}, function (props) {
   return props.fontSize + "px";
 }, function (props) {
   if (props.fontSize) {
@@ -33724,7 +33726,7 @@ var Wrapper = _styledComponents2.default.button(_templateObject, function (props
         mid = _props$gradientColor.mid,
         right = _props$gradientColor.right;
 
-    return "linear-gradient(to right,hsla(" + left + ",100%,60%,1) 0%,hsla(" + mid + ",100%,60%,1) 52%,hsla(" + right + ",100%,67%,1) 100%)";
+    return "linear-gradient(to right,hsla(" + left + ",100%,45%,1) 0%,hsla(" + mid + ",100%,45%,1) 52%,hsla(" + right + ",100%,45%,1) 100%)";
   } else {
     var _left = props.gradientColor.left;
 
@@ -33745,6 +33747,7 @@ var GradientButton = function GradientButton(props) {
     {
       fontSize: props.fontSize ? props.fontSize : 20,
       fontFamily: props.fontFamily,
+      borderRadius: props.borderRadius,
       gradientColor: {
         left: props.gradientColor.left ? props.gradientColor.left : null,
         mid: props.gradientColor.mid ? props.gradientColor.mid : null,
@@ -33771,10 +33774,23 @@ module.exports = {
 // import ReactDOM from "react-dom"
 // import GradientButton from "./GradientButton"
 //
+// import styled from "styled-components"
+//
+// const Wrapper = styled.div`
+//   button {
+//     display: block;
+//     margin: 50px;
+//   }
+// `
+//
 // document.addEventListener("DOMContentLoaded", () => {
-//   ReactDOM.render(<GradientButton gradientColor={{
-//     left: 250
-//   }} />, document.getElementById("app"))
+//   ReactDOM.render(
+//     <Wrapper>
+//       <GradientButton text={"Your content"} gradientColor={{left: 250}} />
+//       <GradientButton text={"Your content"} gradientColor={{left: 20}} />
+//       <GradientButton text={"Your content"} gradientColor={{left: 100, mid: 150, right: 250}} />
+//       <GradientButton text={"Your content"} borderRadius={10} gradientColor={{left: 280}} />
+//     </Wrapper>, document.getElementById("app"))
 // })
 },{"./GradientButton":"GradientButton.js"}],"..\\..\\..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -33805,7 +33821,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60784' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49843' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

@@ -1,16 +1,22 @@
 {
-  "name": "react-gradient-button",
-  "version": "1.0.0",
+  "name": "react-simple-gradient-button",
+  "version": "1.1.0",
   "description": "Easy gradient button component",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stuhl/react-gradient-button"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Stuhl",
   "license": "ISC",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
