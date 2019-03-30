@@ -11,7 +11,7 @@ const Wrapper = styled.button`
   /* fixed properties */
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: ${props => props.borderRadius ? `${props.borderRadius}px` : "50px"};
   color: white;
   font-weight: 600;
 
@@ -29,7 +29,7 @@ const Wrapper = styled.button`
   background: ${props => {
     if (props.gradientColor.left && props.gradientColor.mid && props.gradientColor.right) {
       const {left, mid, right} = props.gradientColor
-      return `linear-gradient(to right,hsla(${left},100%,60%,1) 0%,hsla(${mid},100%,60%,1) 52%,hsla(${right},100%,67%,1) 100%)`
+      return `linear-gradient(to right,hsla(${left},100%,45%,1) 0%,hsla(${mid},100%,45%,1) 52%,hsla(${right},100%,45%,1) 100%)`
     } else {
       const {left} = props.gradientColor
       return `linear-gradient(to right,hsla(${left},100%,45%,1) 0%,hsla(${left + 30},100%,45%,1) 52%,hsla(${left + 60},100%,45%,1) 100%)`
@@ -62,6 +62,7 @@ const GradientButton = (props) => {
     <Wrapper
        fontSize={props.fontSize ? props.fontSize : 20}
        fontFamily={props.fontFamily}
+       borderRadius={props.borderRadius}
        gradientColor={{
          left: props.gradientColor.left ? props.gradientColor.left : null,
          mid: props.gradientColor.mid ? props.gradientColor.mid : null,
