@@ -31,33 +31,33 @@ which displays
 
 The GradientButton Component accepts a couple of different properties:
 
-* Name: `text`
-Type: `String`
-Default: `Dummy`
+* Name: `text`  
+Type: `String`  
+Default: `Dummy`  
 Description: The naming of the button.
 
-* Name: `fontSize`
-Type: `Number`
-Default: `20`
+* Name: `fontSize`  
+Type: `Number`  
+Default: `20`  
 Description: Size of the button text in pixel.
 
-* Name: `fontFamily`
-Type: `String`
-Default: `Arial`
+* Name: `fontFamily`  
+Type: `String`  
+Default: `Arial`  
 Description: The font family of the text. Could something like Arial, Trebuchet MS etc.
 
-* Name: `borderRadius`
-Type: `Number`
-Default: `50`
+* Name: `borderRadius`  
+Type: `Number`  
+Default: `50`  
 Description: The border radius of the button in pixel. Use this to change the appearance of the button from round to normal.
 
-* Name: `gradientColor`
-Type: `Object`
+* Name: `gradientColor`  
+Type: `Object`  
 Default: `{
     left: 0,
     mid: 40,
     right: 80
-}`
+}`  
 Description: This is the gradientColor which makes the button look so nice. It accepts a object which has 3 properties. Those are `left`, `mid` and `right`. They all accept `Number` type values. They represent the "breakpoints" of the gradient.
 
 The system on which the buttons are build upon are using hsla color values. so a value from `0` to `360` is considered.
