@@ -1,6 +1,6 @@
 // import React from "react"
 // import ReactDOM from "react-dom"
-// // import GradientButton from "./GradientButton"
+// import GradientButton from "./GradientButton"
 //
 // import styled from "styled-components"
 //
@@ -12,13 +12,7 @@
 // `
 //
 // document.addEventListener("DOMContentLoaded", () => {
-//   ReactDOM.render(
-//     <Wrapper>
-//       <GradientButton text={"Your content"} gradientColor={{left: 250}} />
-//       <GradientButton text={"Your content"} gradientColor={{left: 20}} />
-//       <GradientButton text={"Your content"} gradientColor={{left: 100, mid: 150, right: 250}} />
-//       <GradientButton text={"Your content"} borderRadius={10} gradientColor={{left: 280}} />
-//     </Wrapper>, document.getElementById("app"))
+//   ReactDOM.render(<GradientButton text={"looooong button"} fontFamily={"Arial"} gradientColor={{left: 200}}/>, document.getElementById("app"))
 // })
 
 import GradientButton from "./GradientButton"

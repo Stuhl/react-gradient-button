@@ -11,20 +11,16 @@ const Wrapper = styled.button`
   /* fixed properties */
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: ${props => props.borderRadius ? `${props.borderRadius}px` : "50px"};
+  border-radius: ${props => `${props.borderRadius}px`};
   color: white;
   font-weight: 600;
 
-  font-size: ${props => `${props.fontSize}px`}
+  font-size: ${props => `${props.fontSize}px`};
   padding: ${props => {
-    if (props.fontSize) {
-      const paddingSize = props.fontSize * 2
-      return `20px ${paddingSize}px`
-    } else {
-      return "40px 70px"
-    }
+    const paddingSize = props.fontSize * 2
+    return `${props.fontSize}px ${paddingSize}px`
   }};
-  font-family: ${props => props.fontFamily ? props.fontFamily : "Arial"}
+  font-family: ${props => props.fontFamily};
 
   background: ${props => {
     if (props.gradientColor.left && props.gradientColor.mid && props.gradientColor.right) {
@@ -32,24 +28,18 @@ const Wrapper = styled.button`
       return `linear-gradient(to right,hsla(${left},100%,45%,1) 0%,hsla(${mid},100%,45%,1) 52%,hsla(${right},100%,45%,1) 100%)`
     } else {
       const {left} = props.gradientColor
-      return `linear-gradient(to right,hsla(${left},100%,45%,1) 0%,hsla(${left + 30},100%,45%,1) 52%,hsla(${left + 60},100%,45%,1) 100%)`
+      return `linear-gradient(to right,hsla(${left},100%,45%,1) 0%,hsla(${left + 40},100%,45%,1) 52%,hsla(${left + 80},100%,45%,1) 100%)`
     }
   }};
   background-size: 200% 100%;
-
   transition: all 0.4s ease 0s, box-shadow 0.1s ease 0s;
-
-  box-shadow: ${props => `0px 2px 12px hsla(${props.gradientColor.left}, 100%, 50%, 1)`};
+  box-shadow: ${props => `0px 5px 10px hsla(${props.gradientColor.left}, 100%, 50%, 0.5)`};
 
 
   &:hover {
     background-position: 100% 0%;
-    box-shadow: ${props => `0px 2px 20px hsla(${props.gradientColor.right ? props.gradientColor.right : props.gradientColor.left + 60}, 100%, 50%, 1)`};
+    box-shadow: ${props => `0px 5px 10px hsla(${props.gradientColor.right ? props.gradientColor.right : props.gradientColor.left + 60}, 100%, 50%, 0.5)`};
   }
-  //
-  // &:active {
-  //   box-shadow: ${props => `0px 2px 20px hsla(${props.gradientColor.left}, 100%, 50%, 1)`};
-  // }
 
   &:focus {
     outline: none;
@@ -57,21 +47,26 @@ const Wrapper = styled.button`
 `
 
 const GradientButton = (props) => {
-  console.log(props)
   return (
     <Wrapper
-       fontSize={props.fontSize ? props.fontSize : 20}
+       fontSize={props.fontSize}
        fontFamily={props.fontFamily}
        borderRadius={props.borderRadius}
-       gradientColor={{
-         left: props.gradientColor.left ? props.gradientColor.left : null,
-         mid: props.gradientColor.mid ? props.gradientColor.mid : null,
-         right: props.gradientColor.right ? props.gradientColor.right : null,
-       }}
+       gradientColor={props.gradientColor}
        >
-      {props.text ? props.text : "Dummy"}
+      {props.text}
     </Wrapper>
   )
+}
+
+GradientButton.defaultProps = {
+  fontSize: 20,
+  fontFamily: "Arial",
+  borderRadius: 50,
+  gradientColor: {
+    left: 0
+  },
+  text: "Dummy"
 }
 
 export default GradientButton
