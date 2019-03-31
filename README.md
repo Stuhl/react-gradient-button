@@ -31,27 +31,27 @@ which displays
 
 The GradientButton Component accepts a couple of different properties:
 
-Name: `text`
+* Name: `text`
 Type: `String`
 Default: `Dummy`
 Description: The naming of the button.
 
-Name: `fontSize`
+* Name: `fontSize`
 Type: `Number`
 Default: `20`
 Description: Size of the button text in pixel.
 
-Name: `fontFamily`
+* Name: `fontFamily`
 Type: `String`
 Default: `Arial`
 Description: The font family of the text. Could something like Arial, Trebuchet MS etc.
 
-Name: `borderRadius`
+* Name: `borderRadius`
 Type: `Number`
 Default: `50`
 Description: The border radius of the button in pixel. Use this to change the appearance of the button from round to normal.
 
-Name: `gradientColor`
+* Name: `gradientColor`
 Type: `Object`
 Default: `{
     left: 0,
